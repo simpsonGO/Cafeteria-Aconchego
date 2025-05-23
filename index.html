@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>InspiraSpace</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="Style/Style_main.css" rel="stylesheet">
-  <link href="Script/script_main.js" rel="Script">
-</head>
-
-<body>
-  <header>
+<header>
     <h1>InspiraSpace</h1>
     <nav>
       <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#newsletter">Newsletter</a>
     </nav>
   </header>
 
@@ -37,6 +27,33 @@
     <div class="card">
       <h3>🧠 Smart Features</h3>
       <p>Interactive elements that respond to user behavior and guide the experience.</p>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="card">
+      <h3>🌟 Jane Doe</h3>
+      <p>"InspiraSpace completely transformed my workflow. The design is so intuitive and sleek!"</p>
+    </div>
+    <div class="card">
+      <h3>🌟 John Smith</h3>
+      <p>"The speed and user experience are unmatched. I recommend this to everyone in tech!"</p>
+    </div>
+    <div class="card">
+      <h3>🌟 Alice Lee</h3>
+      <p>"Simple, fast, and beautiful. Everything I wanted in a modern web interface!"</p>
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <div class="card" style="grid-column: span 3;">
+      <h3>📬 Join Our Newsletter</h3>
+      <p>Stay updated with the latest inspiration, features, and more. No spam, we promise!</p>
+      <form onsubmit="subscribeNewsletter(event)">
+        <input type="email" id="emailInput" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="message" style="margin-top: 10px;"></p>
     </div>
   </section>
 
