@@ -1,0 +1,268 @@
+/* main.css */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-header {
+  background: #1a1a2e;
+  color: white;
+  padding: 20px 0;
+}
+
+.site-header .logo {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.nav {
+  float: right;
+}
+
+.nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 0;
+  background: linear-gradient(135deg, #e1ecf4, #ffffff);
+}
+
+.hero-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+}
+
+.hero-text .btn-primary {
+  display: inline-block;
+  margin-top: 15px;
+  background: #1a1a2e;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.hero-text .btn-primary:hover {
+  background: #0f3460;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.info-section, .cards-section, .gallery-section, .contact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cards-section .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  object-fit: cover;
+  height: 200px;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #1a1a2e;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #0f3460;
+}
+
+.site-footer {
+  background: #1a1a2e;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.site-footer .social-links a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.image-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.image-modal .modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.image-modal img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 8px;
+}
+
+.image-modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav {
+    float: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .nav a {
+    display: inline-block;
+    margin: 10px;
+  }
+}
+/* Fade-in suave para seções */
+.hero-section, .info-section, .cards-section, .gallery-section, .contact-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-section.visible,
+.info-section.visible,
+.cards-section.visible,
+.gallery-section.visible,
+.contact-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Destaque animado nos cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.active {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(26, 26, 46, 0.4);
+}
+
+/* Animação botão enviar */
+.contact-form button {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button.clicked {
+  animation: clickPulse 0.3s forwards;
+}
+
+@keyframes clickPulse {
+  0% { transform: scale(1); background-color: #1a1a2e; }
+  50% { transform: scale(1.1); background-color: #0f3460; }
+  100% { transform: scale(1); background-color: #1a1a2e; }
+}
