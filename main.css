@@ -1,0 +1,86 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #f7f2e9;
+  color: #3a2a0a;
+  line-height: 1.6;
+}
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 2rem 0; }
+
+/* HEADER FIXO */
+.site-header {
+  position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 1000;
+}
+.header-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+.logo img { height: 50px; }
+.nav-list { list-style: none; display: flex; gap: 1.5rem; }
+.nav-list li a { text-decoration: none; font-weight: 600; transition: color 0.3s; }
+.nav-list li a:hover { color: #a67c52; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.hamburger span { display: block; width: 25px; height: 3px; margin: 5px; background: #3a2a0a; transition: 0.3s; }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/coffeevibes/1600/900') center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff;
+}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 1rem; }
+.btn-primary { background: #a67c52; color: #fff; padding: 0.75rem 1.5rem; border: none; cursor: pointer; font-family: 'Playfair Display', serif; }
+.btn-primary:hover { background: #8c6239; }
+
+/* ANIMAÇÕES */
+.animate-slide-up { opacity: 0; transform: translateY(30px); animation: slideUp 1s ease-out forwards; }
+.animate-fade-in { opacity: 0; animation: fadeIn 1.5s ease-out forwards; }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* SEÇÕES */
+section { padding: 4rem 0; }
+section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
+section p { max-width: 800px; margin: 0 auto 2rem; text-align: center; }
+
+/* GRID CARDÁPIO */
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem; }
+.menu-card { background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.menu-card:hover { transform: translateY(-5px); }
+.menu-card img { width: 100%; height: 200px; object-fit: cover; }
+.menu-card h3 { font-family: 'Playfair Display', serif; margin: 1rem; }
+.menu-card p { margin: 0 1rem 1rem; }
+
+/* GALERIA */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
+.gallery-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 0.5rem; transition: transform 0.3s; }
+.gallery-grid img:hover { transform: scale(1.05); }
+
+/* DEPOIMENTOS */
+.testimonial-slider { position: relative; overflow: hidden; max-width: 800px; margin: 0 auto; }
+.testimonial { min-width: 100%; padding: 1.5rem; background: #fff; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); opacity: 0; transform: translateX(100%); transition: all 0.5s; }
+.testimonial.active { opacity: 1; transform: translateX(0); }
+.slider-prev, .slider-next { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 2rem; cursor: pointer; }
+.slider-prev { left: 1rem; }
+.slider-next { right: 1rem; }
+
+/* CONTATO */
+.contact form { max-width: 600px; margin: 0 auto; background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 0.5rem; }
+.form-feedback { margin-top: 1rem; text-align: center; }
+
+/* FOOTER */
+.site-footer { background: #3a2a0a; color: #fff; padding: 2rem 0; text-align: center; }
+.social-links a { margin: 0 0.5rem; }
+.social-links img { width: 24px; height: 24px; }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .nav-list { position: absolute; top: 60px; right: 0; background: #fff; flex-direction: column; width: 200px; transform: translateX(100%); transition: transform 0.3s; }
+  .nav-list.open { transform: translateX(0); }
+  .nav-toggle { display: block; }
+}

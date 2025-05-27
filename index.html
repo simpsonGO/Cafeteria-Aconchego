@@ -1,101 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NovaEra - Página Principal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cafeteria Aconchego</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400&600&display=swap" rel="stylesheet">
+
+  <!-- Estilos e Script -->
+  <link rel="stylesheet" href="main.css">
+  <script defer src="main.js"></script>
 </head>
+
 <body>
+  <!-- HEADER FIXO -->
   <header class="site-header">
-    <div class="container">
-      <h1 class="logo">NovaEra</h1>
+    <div class="container header-container">
+      <a href="#home" class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" alt="Logo Cafeteria Aconchego">
+      </a>
       <nav class="nav">
-        <a href="#about">Sobre</a>
-        <a href="#services">Serviços</a>
-        <a href="#projects">Projetos</a>
-        <a href="#contact">Contato</a>
+        <button class="nav-toggle" aria-label="Abrir menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre Nós</a></li>
+          <li><a href="#menu">Cardápio</a></li>
+          <li><a href="#gallery">Galeria</a></li>
+          <li><a href="#testimonials">Depoimentos</a></li>
+          <li><a href="#location">Localização</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
       </nav>
-      <div style="clear: both;"></div>
     </div>
   </header>
 
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-text">
-        <h2>Bem-vindo à NovaEra</h2>
-        <p>Inovação, criatividade e tecnologia para transformar seu mundo.</p>
-        <a href="#services" class="btn-primary">Conheça nossos serviços</a>
-      </div>
-      <div class="hero-image">
-        <img src="https://picsum.photos/id/1005/600/400" alt="Imagem Hero" />
-      </div>
+  <!-- HERO COM ANIMAÇÕES E OVERLAY -->
+  <section id="home" class="hero">
+    <!-- Overlay escuro -->
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="animate-slide-up">Bem-vindo à Cafeteria Aconchego</h1>
+      <p class="animate-fade-in">O sabor que abraça. O aroma que acolhe.</p>
+      <a href="#menu" class="btn btn-primary animate-slide-up">Conheça o nosso Cardápio</a>
     </div>
   </section>
 
-  <section id="about" class="info-section">
-    <div class="container">
-      <h2>Sobre Nós</h2>
-      <p>Somos uma equipe dedicada a oferecer soluções digitais inovadoras para empresas e indivíduos.</p>
-    </div>
+  <!-- SEÇÃO SOBRE NÓS -->
+  <section id="about" class="about container">
+    <h2>Sobre Nós</h2>
+    <p>A Cafeteria Aconchego nasceu do amor por cafés de qualidade e ambientes acolhedores. Nossa filosofia é unir bem-estar, aroma e sabor em cada xícara.</p>
   </section>
 
-  <section id="services" class="cards-section">
-    <div class="container">
-      <h2>Serviços</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Consultoria Tech</h3>
-          <p>Analisamos suas necessidades e criamos soluções sob medida.</p>
-        </div>
-        <div class="card">
-          <h3>Desenvolvimento Web</h3>
-          <p>Sites modernos, rápidos e responsivos para seu negócio online.</p>
-        </div>
-        <div class="card">
-          <h3>Marketing Digital</h3>
-          <p>Campanhas eficazes para ampliar sua presença digital.</p>
-        </div>
+  <!-- CARDÁPIO -->
+  <section id="menu" class="menu container">
+    <h2>Nosso Cardápio</h2>
+    <div class="menu-grid">
+      <div class="card menu-card animate-fade-in">
+        <img src="https://picsum.photos/seed/espresso/400/300" alt="Espresso" />
+        <h3>Cafés Especiais</h3>
+        <p>Variedade de blends selecionados de diferentes regiões do mundo.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="projects" class="gallery-section">
-    <div class="container">
-      <h2>Projetos</h2>
-      <div class="gallery-grid">
-        <img src="https://picsum.photos/id/1018/400/300" alt="Projeto 1" />
-        <img src="https://picsum.photos/id/1015/400/300" alt="Projeto 2" />
-        <img src="https://picsum.photos/id/1019/400/300" alt="Projeto 3" />
-        <img src="https://picsum.photos/id/1020/400/300" alt="Projeto 4" />
-        <img src="https://picsum.photos/id/1024/400/300" alt="Projeto 5" />
-        <img src="https://picsum.photos/id/1027/400/300" alt="Projeto 6" />
+      <div class="card menu-card animate-fade-in">
+        <img src="https://picsum.photos/seed/dessert/400/300" alt="Sobremesa" />
+        <h3>Sobremesas</h3>
+        <p>Delícias caseiras que harmonizam perfeitamente com o café.</p>
+      </div>
+      <div class="card menu-card animate-fade-in">
+        <img src="https://picsum.photos/seed/sandwich/400/300" alt="Lanche" />
+        <h3>Lanches</h3>
+        <p>Opções salgadas e leves para acompanhar sua bebida favorita.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>Contato</h2>
-      <form class="contact-form">
-        <input type="text" name="name" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+  <!-- GALERIA -->
+  <section id="gallery" class="gallery container">
+    <h2>Galeria</h2>
+    <div class="gallery-grid">
+      <img src="https://picsum.photos/seed/interior1/300/200" alt="Interior da Cafeteria">
+      <img src="https://picsum.photos/seed/coffee/300/200" alt="Xícara de Café">
+      <img src="https://picsum.photos/seed/interior2/300/200" alt="Ambiente Aconchegante">
+      <img src="https://picsum.photos/seed/pastries/300/200" alt="Doces e Salgados">
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 NovaEra. Todos os direitos reservados.</p>
+  <!-- DEPOIMENTOS -->
+  <section id="testimonials" class="testimonials container">
+    <h2>Depoimentos</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial active animate-fade-in">
+        <p>"O melhor café da cidade! Ambiente acolhedor e atendimento incrível."</p>
+        <h4>— Mariana S.</h4>
+      </div>
+      <div class="testimonial animate-fade-in">
+        <p>"Cada visita é uma experiência única, com sabores inesquecíveis."</p>
+        <h4>— Renato L.</h4>
+      </div>
+      <button class="slider-prev" aria-label="Anterior">‹</button>
+      <button class="slider-next" aria-label="Próximo">›</button>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="location" class="location container">
+    <h2>Localização</h2>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contact" class="contact container">
+    <h2>Contato</h2>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Telefone:</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <p id="form-feedback" class="form-feedback"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer container">
+    <div class="footer-info">
+      <p>&copy; 2025 Cafeteria Aconchego. Todos os direitos reservados.</p>
       <div class="social-links">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Twitter">Twitter</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
       </div>
     </div>
   </footer>
 </body>
-  <link rel="stylesheet" href="./Style/main.css" />
-  <script src="./Script/main.js"></script>
+
 </html>
