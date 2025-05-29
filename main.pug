@@ -1,0 +1,70 @@
+doctype html
+html(lang="pt-BR")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Cafeteria Aconchego
+    link(rel="stylesheet" href="styles.css")
+    script(src="script.ts" type="module") // ou o JS compilado
+
+  body
+    //- Nav placeholder
+    #nav-placeholder
+
+    main
+      //- Menu toggle para mobile
+      button.nav-toggle(type="button") ☰
+
+      //- Nav list (exemplo simples, será substituído ao carregar nav.html)
+      nav.nav-list
+        ul
+          li: a(href="#home") Home
+          li: a(href="#about") Sobre
+          li: a(href="#menu") Menu
+          li: a(href="#contact") Contato
+
+      //- Conteúdo exemplo
+      section#home
+        h1 Bem-vindo à Cafeteria Aconchego
+
+      section#about
+        h2 Sobre Nós
+        p Aqui falamos um pouco da história e aconchego da nossa cafeteria.
+
+      section#menu
+        h2 Nosso Menu
+        .menu-card Visite nossa seleção de cafés especiais.
+
+      section#gallery
+        h2 Galeria
+        .gallery-grid
+          img(src="coffee1.jpg" alt="Café 1")
+          img(src="coffee2.jpg" alt="Café 2")
+          img(src="coffee3.jpg" alt="Café 3")
+
+      section#testimonials
+        h2 Depoimentos
+        .testimonial.active Excelente café e atendimento! – Maria
+        .testimonial Ótima localização e ambiente acolhedor. – João
+        .testimonial Adoro o cappuccino de lá! – Ana
+        button.slider-prev(type="button") ‹
+        button.slider-next(type="button") ›
+
+      section#contact
+        h2 Contato
+        form#contact-form
+          label(for="name") Nome
+          input#name(type="text" name="name" required)
+          
+          label(for="email") Email
+          input#email(type="email" name="email" required)
+          
+          label(for="message") Mensagem
+          textarea#message(name="message" required)
+          
+          button(type="submit") Enviar
+          
+        #form-feedback
+
+    //- Footer placeholder
+    #footer-placeholder

@@ -1,0 +1,52 @@
+{
+  "nav": [
+    { "text": "Home", "href": "#home" },
+    { "text": "Sobre", "href": "#about" },
+    { "text": "Menu", "href": "#menu" },
+    { "text": "Contato", "href": "#contact" }
+  ],
+  "sections": {
+    "home": {
+      "title": "Bem-vindo à Cafeteria Aconchego",
+      "content": ""
+    },
+    "about": {
+      "title": "Sobre Nós",
+      "content": "Aqui falamos um pouco da história e aconchego da nossa cafeteria."
+    },
+    "menu": {
+      "title": "Nosso Menu",
+      "cards": [
+        { "class": "menu-card", "content": "Visite nossa seleção de cafés especiais." }
+      ]
+    },
+    "gallery": {
+      "title": "Galeria",
+      "images": [
+        { "src": "coffee1.jpg", "alt": "Café 1" },
+        { "src": "coffee2.jpg", "alt": "Café 2" },
+        { "src": "coffee3.jpg", "alt": "Café 3" }
+      ]
+    },
+    "testimonials": {
+      "title": "Depoimentos",
+      "items": [
+        { "text": "Excelente café e atendimento! – Maria", "active": true },
+        { "text": "Ótima localização e ambiente acolhedor. – João", "active": false },
+        { "text": "Adoro o cappuccino de lá! – Ana", "active": false }
+      ]
+    },
+    "contact": {
+      "title": "Contato",
+      "form": {
+        "fields": [
+          { "label": "Nome", "id": "name", "type": "text", "required": true },
+          { "label": "Email", "id": "email", "type": "email", "required": true },
+          { "label": "Mensagem", "id": "message", "type": "textarea", "required": true }
+        ],
+        "submitText": "Enviar",
+        "feedbackId": "form-feedback"
+      }
+    }
+  }
+}

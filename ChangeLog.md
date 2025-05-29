@@ -29,6 +29,23 @@
 - Melhor experiência do usuário com feedbacks visuais claros e navegação fluida.
 - Organização e limpeza do código para facilitar manutenção futura.
 
+## Added
+
+- Função `loadHTML` para carregar nav e footer via fetch.
+- Scroll suave para links internos de âncora.
+- Toggle do menu mobile ao clicar no botão `.nav-toggle`.
+- Animação de elementos com `IntersectionObserver` ao entrarem na viewport.
+- Slider para depoimentos com botões anterior e próximo.
+- Simulação de envio de formulário de contato com feedback visual.
+- Estrutura base do site criada em Pug:
+  - Nav, Home, Sobre, Menu, Galeria, Depoimentos, Contato e Footer.
+- JSON contendo estrutura do site com navegação, seções, cards e depoimentos.
+
+### Fixed
+
+- Tratamento de erros ao carregar arquivos HTML externos.
+- Verificação da existência dos elementos antes de adicionar event listeners.
+
 ---
 
 *Data da atualização: 29/05/2025*
