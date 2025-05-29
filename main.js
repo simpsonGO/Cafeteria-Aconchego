@@ -1,36 +1,84 @@
-// Scroll suave para âncoras
+// Função para carregar um HTML em um elemento pelo ID
+async function loadHTML(id, url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Erro ao carregar ${url}: ${response.statusText}`);
+    const text = await response.text();
+    document.getElementById(id).innerHTML = text;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Carregar nav e footer
+loadHTML('nav-placeholder', 'nav.html');
+loadHTML('footer-placeholder', 'footer.html');
+
+// Scroll suave para âncoras internas
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// Menu mobile
-document.querySelector('.nav-toggle').addEventListener('click', () => {
-  document.querySelector('.nav-list').classList.toggle('open');
-});
+// Toggle menu mobile
+const navToggle = document.querySelector('.nav-toggle');
+const navList = document.querySelector('.nav-list');
+if (navToggle && navList) {
+  navToggle.addEventListener('click', () => navList.classList.toggle('open'));
+}
 
-// Animações on scroll
+// Animações ao scroll com IntersectionObserver
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.2 });
+
 document.querySelectorAll('.menu-card, .gallery-grid img, .testimonial').forEach(el => observer.observe(el));
 
-// Slider depoimentos
-let current = 0;
+// Slider de depoimentos
 const testimonials = document.querySelectorAll('.testimonial');
-const showTest = i => testimonials.forEach((t, idx) => t.classList.toggle('active', idx === i));
-showTest(current);
-document.querySelector('.slider-prev').addEventListener('click', () => showTest(current = (current - 1 + testimonials.length) % testimonials.length));
-document.querySelector('.slider-next').addEventListener('click', () => showTest(current = (current + 1) % testimonials.length));
+let current = 0;
 
-// Formulário
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => t.classList.toggle('active', i === index));
+}
+
+if (testimonials.length > 0) {
+  showTestimonial(current);
+
+  const prevBtn = document.querySelector('.slider-prev');
+  const nextBtn = document.querySelector('.slider-next');
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(current);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % testimonials.length;
+      showTestimonial(current);
+    });
+  }
+}
+
+// Formulário de contato - simulação de envio
 const form = document.getElementById('contact-form');
 const feedback = document.getElementById('form-feedback');
-form.addEventListener('submit', e => {
-  e.preventDefault(); feedback.textContent = 'Enviando...';
-  setTimeout(() => { feedback.textContent = 'Mensagem enviada com sucesso!'; form.reset(); }, 1500);
-});
+
+if (form && feedback) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    feedback.textContent = 'Enviando...';
+    setTimeout(() => {
+      feedback.textContent = 'Mensagem enviada com sucesso!';
+      form.reset();
+    }, 1500);
+  });
+}

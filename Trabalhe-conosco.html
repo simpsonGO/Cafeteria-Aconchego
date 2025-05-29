@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Trabalhe Conosco - Cafeteria Aconchego</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Estilos e Script -->
+  <link rel="stylesheet" href="main.css">
+  <script defer src="main.js">
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+
+    <div id="nav-placeholder"></div>
+
+  </header>
+
+  <main class="container page-content">
+    <h1>Trabalhe Conosco</h1>
+    <p>Estamos sempre em busca de talentos apaixonados por café e hospitalidade! Confira nossas oportunidades e envie
+      seu currículo.</p>
+
+    <section class="job-listings">
+      <h2>Vagas Abertas</h2>
+      <ul class="job-cards">
+        <li class="job-card">
+          <h3>Barista</h3>
+          <p>Experiência com extração de espresso e atendimento ao cliente.</p>
+        </li>
+        <li class="job-card">
+          <h3>Atendente de Balcão</h3>
+          <p>Boa comunicação e disponibilidade de horários.</p>
+        </li>
+        <li class="job-card">
+          <h3>Auxiliar de Cozinha</h3>
+          <p>Desejável experiência em preparo de lanches e sobremesas.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="job-form">
+      <h2>Envie seu Currículo</h2>
+      <form id="apply-form">
+        <div class="form-group">
+          <label for="fullname">Nome completo:</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone:</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem ou experiência profissional:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="curriculo">Anexar Currículo (PDF):</label>
+          <input type="file" id="curriculo" name="curriculo" accept=".pdf">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <p id="form-feedback"></p>
+      </form>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+</body>
+
+</html>
